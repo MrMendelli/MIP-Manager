@@ -1,0 +1,6 @@
+.vs/
+bin/
+src/obj/
+
+src/obj/*.user
+src/Properties/PublishProfiles/*.user
