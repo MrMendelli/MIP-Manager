@@ -2,5 +2,5 @@
 bin/
 src/obj/
 
-src/obj/*.user
+src/*.user
 src/Properties/PublishProfiles/*.user
