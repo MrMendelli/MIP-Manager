@@ -5,11 +5,9 @@ internal class MIPManager
 {
     static void Main()
     {
-        // Set window title as executable name dynamically
         Console.Title = AppDomain.CurrentDomain.FriendlyName;
         string workingDir = Directory.GetCurrentDirectory();
-        // @""; String literal = Read implicitly (delimeter escaping is not required)
-        const string targetPath = @".\MIP Maps\";
+        const string targetPath = @".\MIPs\";
         Directory.CreateDirectory(targetPath);
 
         if (Directory.Exists(targetPath)) {
@@ -24,12 +22,13 @@ internal class MIPManager
                     mipExists = true;
                     string fileDestination = Path.Combine(targetPath, fileName);
                     File.Move(filePath, fileDestination, true);
-                    // $ = Smart string "{<variable>}"
-                    Console.Write($"Moved mip map: ");
+                    Console.Write("Moved mip map: ");
                     string[] splitName = fileName.Split("_mip");
                     Console.Write(splitName[0]);
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write("_");
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write("_mip");
+                    Console.Write("mip");
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.Write(splitName[1]);
                     Console.WriteLine();
